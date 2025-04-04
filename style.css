@@ -88,6 +88,12 @@ li>a {
     .close {
         display: none;
     }
+      .image{
+        margin-left: -4px !important;
+    }
+    .heading3{
+        font-size: 5vh !important;
+    }
 
     li {
         display: none;
