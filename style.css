@@ -143,11 +143,12 @@ li>a {
 
     .page2 {
         flex-direction: column-reverse;
-        align-items: center;
+        align-items: baseline;
     }
 
     .grid {
         align-content: center;
+        grid-template-columns: 25vh 25vh !important;
     }
 
     .service {
@@ -199,6 +200,15 @@ li>a {
     .responce {
         gap: 30px;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 596px) {
+    .image{
+        margin-left: -4px !important;
+    }
+    .heading3{
+        font-size: 5vh;
     }
 }
 
