@@ -11,6 +11,7 @@
 }
 
 body {
+      transform: translateX(10px) !important;
     /* background-color: #dcdcdc; */
     background: linear-gradient(to bottom,
             rgb(239, 238, 238) 0%,
