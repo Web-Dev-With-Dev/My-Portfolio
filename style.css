@@ -89,7 +89,7 @@ li>a {
         display: none;
     }
     .skillevery{
-        padding:0px 0px;
+        padding:0px 0px !important;
     }
     .all{
         grid-template-rows: 130px 130px 130px !important;
