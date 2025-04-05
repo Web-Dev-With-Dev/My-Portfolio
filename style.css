@@ -11,7 +11,6 @@
 }
 
 body {
-    overflow-x : hidden;
     /* background-color: #dcdcdc; */
     background: linear-gradient(to bottom,
             rgb(239, 238, 238) 0%,
@@ -89,8 +88,15 @@ li>a {
     .close {
         display: none;
     }
+    .skillevery{
+        padding:0px 0px;
+    }
+    .all{
+        grid-template-rows: 130px 130px 130px !important;
+        gap: 4px !important;
+    }
     .grid{
-        gap: 3vw;
+        gap: 1vw;
     }
     #contact-form{
         margin-left: 20px !important;
