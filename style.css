@@ -11,6 +11,7 @@
 }
 
 body {
+    overflow-x : hidden;
     /* background-color: #dcdcdc; */
     background: linear-gradient(to bottom,
             rgb(239, 238, 238) 0%,
@@ -331,7 +332,9 @@ input {
     transition: 1s;
     background-color: #c9c9c9;
 }
-
+.main_content{
+    margin-left:10px;
+}
 body:has(.dev:hover) .box1 {
     top: 1%;
     left: 1.7%;
