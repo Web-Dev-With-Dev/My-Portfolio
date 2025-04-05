@@ -97,6 +97,7 @@ li>a {
     }
     .grid{
         gap: 1vw;
+        grid-template-column: 23vh 23vh;
     }
     #contact-form{
         margin-left: 20px !important;
