@@ -99,6 +99,9 @@ li>a {
         margin-top: 2px !important;
         min-width: 90vw !important;
     }
+    .contactbox{
+        min-width:90vw !important;
+    }
       .image{
         margin-left: -4px !important;
     }
