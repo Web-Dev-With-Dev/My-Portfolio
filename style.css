@@ -95,7 +95,7 @@ li>a {
     .all{
         grid-template-rows: 130px 130px 130px !important;
         gap: 4px !important;
-        grid-template-column: 30vw 30vw 30vw !important;
+        grid-template-column: 32vw 32vw 32vw !important;
     }
     .grid{
         gap: 2px;
@@ -790,7 +790,9 @@ div.heading3b {
 body:has(.heading3:hover) .heading3b {
     opacity: 40%;
 }
-
+.last{
+    width:100%;
+}
 .lllast {
     margin-top: 30vh;
     display: flex;
