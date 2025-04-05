@@ -94,6 +94,7 @@ li>a {
     .all{
         grid-template-rows: 130px 130px 130px !important;
         gap: 4px !important;
+        grid-template-column: 28vw 28vw 28vw !important;
     }
     .grid{
         gap: 1vw;
