@@ -11,7 +11,7 @@
 }
 
 body {
-      transform: translateX(30px) !important;
+      transform: translateX(40px) !important;
     /* background-color: #dcdcdc; */
     background: linear-gradient(to bottom,
             rgb(239, 238, 238) 0%,
@@ -98,7 +98,7 @@ li>a {
         grid-template-column: 30vw 30vw 30vw !important;
     }
     .grid{
-        gap: 1vw;
+        gap: 2px;
         grid-template-column: 23vh 23vh;
     }
     #contact-form{
