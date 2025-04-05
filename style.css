@@ -4,10 +4,6 @@
     font-family: "Bai Jamjuree", sans-serif;
     user-select: none;
 }
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 
 .nav {
     margin-top: 12px;
