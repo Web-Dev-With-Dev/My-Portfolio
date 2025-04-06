@@ -71,6 +71,10 @@ li>a {
     justify-content: space-between;
 }
 
+.nav{
+    position:fixed !important;
+}
+
 .menu {
     margin-top: 2vh;
 }
