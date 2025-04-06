@@ -5,11 +5,6 @@
     user-select: none;
 }
 
-.nav {
-    margin-top: 12px;
-    display: flex;
-}
-
 body {
       transform: translateX(40px) !important;
     /* background-color: #dcdcdc; */
