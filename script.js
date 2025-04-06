@@ -1,3 +1,20 @@
+
+  const emailInput = document.getElementById("email-address");
+
+  emailInput.addEventListener("input", function () {
+    let value = emailInput.value;
+
+    // Remove anything after "@" and any invalid characters
+    const emailName = value.split("@")[0];
+    const cleaned = emailName.replace(/[^a-zA-Z0-9._-]/g, "");
+
+    emailInput.value = cleaned;
+  });
+
+
+
+
+
 function toggleImage() {
     let img = document.getElementsByClassName("menu")[0]; // Select the first element
     if (img.src.includes("menu-2-line.png")) {
