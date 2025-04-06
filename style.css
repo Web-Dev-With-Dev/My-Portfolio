@@ -89,18 +89,19 @@ li>a {
     .close {
         display: none;
     }
+    
     .header{
         margin-left:30vw !important;
     }
     .skillevery{
-        padding:0px 0px !important;
+        padding:10px !important;
     }
     .header2{
         margin-left: 40vw !important;
     }
     .all{
         grid-template-rows: 130px 130px 130px !important;
-        gap: 4px !important;
+        gap: 20px !important;
         grid-template-column: 75px 75px 75px !important;
     }
     .grid{
@@ -139,7 +140,7 @@ li>a {
 
     .boox {
         width: 170px !important;
-        left: 130% !important;
+        left: 150% !important;
     }
 
     body:has(.devv:hover) .boox {
