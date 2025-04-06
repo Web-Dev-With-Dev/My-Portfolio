@@ -1,20 +1,15 @@
+  document.getElementById('email-form').addEventListener('submit', function (e) {
+    const emailInput = document.getElementById('email-address');
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const emailInput = document.getElementById("email-address");
-
-  emailInput.addEventListener("input", function () {
-    let value = emailInput.value;
-
-    // Remove anything after "@" and any invalid characters
-    const emailName = value.split("@")[0];
-    const cleaned = emailName.replace(/[^a-zA-Z0-9._-]/g, "");
-
-    emailInput.value = cleaned;
+    if (!emailRegex.test(email)) {
+      e.preventDefault(); // stop form from submitting
+      alert('Please enter a valid email address.');
+      emailInput.focus();
+    }
   });
-
-
-
-
-
+  
 function toggleImage() {
     let img = document.getElementsByClassName("menu")[0]; // Select the first element
     if (img.src.includes("menu-2-line.png")) {
