@@ -79,143 +79,181 @@ function redirectToGit() {
     window.location.href = "https://github.com/Web-Dev-With-Dev";
 }
 
-document.getElementById('scrollDownBtn').addEventListener('click', function() {
-    const targetPosition = window.scrollY + window.innerHeight;
-    const startPosition = window.scrollY;
-    const distance = targetPosition - startPosition;
-    const duration = 900; // Increase duration for ultra-smooth scrolling
-    let startTime = null;
+// document.getElementById('scrollDownBtn').addEventListener('click', function() {
+//     const targetPosition = window.scrollY + window.innerHeight;
+//     const startPosition = window.scrollY;
+//     const distance = targetPosition - startPosition;
+//     const duration = 900; // Increase duration for ultra-smooth scrolling
+//     let startTime = null;
 
-    function smoothScroll(currentTime) {
-        if (!startTime) startTime = currentTime;
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1);
+//     function smoothScroll(currentTime) {
+//         if (!startTime) startTime = currentTime;
+//         const elapsedTime = currentTime - startTime;
+//         const progress = Math.min(elapsedTime / duration, 1);
 
-        window.scrollTo(0, startPosition + distance * easeOutCubic(progress));
+//         window.scrollTo(0, startPosition + distance * easeOutCubic(progress));
 
-        if (progress < 1) {
-            requestAnimationFrame(smoothScroll);
-        }
+//         if (progress < 1) {
+//             requestAnimationFrame(smoothScroll);
+//         }
+//     }
+
+//     function easeOutCubic(t) {
+//         return 1 - Math.pow(1 - t, 3);
+//     }
+
+//     requestAnimationFrame(smoothScroll);
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     let lastScrollTop = window.scrollY;
+//     let dynamicLink = document.getElementById("dynamicLink"); // Link to change
+
+//     window.addEventListener("scroll", function () {
+//         let currentScroll = window.scrollY;
+
+//         if (currentScroll < lastScrollTop) {
+//             // If scrolling up, change href to the target section
+//             dynamicLink.href = "#targetSection"; 
+//         } else {
+//             // If scrolling down, change href back
+//             dynamicLink.href = "#";
+//         }
+
+//         lastScrollTop = currentScroll;
+//     });
+// });
+
+// const butt = document.querySelectorAll(".scrollButton"); // Select multiple buttons
+// const targetS = document.getElementById("target-section");
+
+// // Click to scroll for each button
+// butt.forEach(butt => {
+//     butt.addEventListener("click", function() {
+//         targetS.scrollIntoView({ behavior: "smooth" });
+//     });
+// });
+
+// // Activate buttons when scrolled
+// window.addEventListener("scroll", function() {
+//     const targetRect = targetS.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+
+//     butt.forEach(butt => {
+//         if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
+//             butt.classList.add("active");
+//         } else {
+//             butt.classList.remove("active");
+//         }
+//     });
+// });
+// const butto = document.querySelectorAll(".scrollButto"); // Select multiple buttons
+// const targetSec = document.getElementById("target-sectio");
+
+// // Click to scroll for each button
+// butto.forEach(butt => {
+//     butt.addEventListener("click", function() {
+//         targetSec.scrollIntoView({ behavior: "smooth" });
+//     });
+// });
+
+// // Activate buttons when scrolled
+// window.addEventListener("scroll", function() {
+//     const targetRect = targetSec.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+
+//     butto.forEach(butt => {
+//         if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
+//             butt.classList.add("active");
+//         } else {
+//             butt.classList.remove("active");
+//         }
+//     });
+// });
+// const buttons = document.querySelectorAll(".scrollButt"); // Select multiple buttons
+// const targetSecti = document.getElementById("target-secti");
+
+// // Click to scroll for each button
+// buttons.forEach(butt => {
+//     butt.addEventListener("click", function() {
+//         targetSecti.scrollIntoView({ behavior: "smooth" });
+//     });
+// });
+
+// // Activate buttons when scrolled
+// window.addEventListener("scroll", function() {
+//     const targetRect = targetSecti.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+
+//     buttons.forEach(butt => {
+//         if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
+//             butt.classList.add("active");
+//         } else {
+//             butt.classList.remove("active");
+//         }
+//     });
+// });
+
+// const bu = document.querySelectorAll(".scrollBut"); // Select multiple buttons
+// const target = document.getElementById("target-sect");
+
+// // Click to scroll for each button
+// bu.forEach(butt => {
+//     butt.addEventListener("click", function() {
+//         target.scrollIntoView({ behavior: "smooth" });
+//     });
+// });
+
+// // Activate buttons when scrolled
+// window.addEventListener("scroll", function() {
+//     const targetRect = target.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+
+//     bu.forEach(butt => {
+//         if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
+//             butt.classList.add("active");
+//         } else {
+//             butt.classList.remove("active");
+//         }
+//     });
+// });
+
+
+const buttonSectionPairs = [
+    { class: ".scrollBut", sectionId: "Home" },
+    { class: ".scrollButton", sectionId: "About" },
+    { class: ".scrollButto", sectionId: "skills" },
+    { class: ".scrollButt", sectionId: "contact" }
+];
+
+buttonSectionPairs.forEach(({ class: btnClass, sectionId }) => {
+    const buttons = document.querySelectorAll(btnClass);
+    const targetSection = document.getElementById(sectionId);
+
+    if (!targetSection) {
+        console.error(`No section found with id "${sectionId}"`);
+        return;
     }
 
-    function easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-    }
+    // Scroll to section on button click
+    buttons.forEach(button => {
+        button.addEventListener("click", e => {
+            e.preventDefault(); // Prevent anchor jump
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
 
-    requestAnimationFrame(smoothScroll);
-});
+    // Activate buttons on scroll
+    window.addEventListener("scroll", () => {
+        const rect = targetSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
-document.addEventListener("DOMContentLoaded", function () {
-    let lastScrollTop = window.scrollY;
-    let dynamicLink = document.getElementById("dynamicLink"); // Link to change
-
-    window.addEventListener("scroll", function () {
-        let currentScroll = window.scrollY;
-
-        if (currentScroll < lastScrollTop) {
-            // If scrolling up, change href to the target section
-            dynamicLink.href = "#targetSection"; 
-        } else {
-            // If scrolling down, change href back
-            dynamicLink.href = "#";
-        }
-
-        lastScrollTop = currentScroll;
+        buttons.forEach(button => {
+            if (window.scrollY > 100 && rect.top < windowHeight && rect.bottom > 0) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
+        });
     });
 });
-
-const butt = document.querySelectorAll(".scrollButton"); // Select multiple buttons
-const targetS = document.getElementById("target-section");
-
-// Click to scroll for each button
-butt.forEach(butt => {
-    butt.addEventListener("click", function() {
-        targetS.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Activate buttons when scrolled
-window.addEventListener("scroll", function() {
-    const targetRect = targetS.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    butt.forEach(butt => {
-        if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
-            butt.classList.add("active");
-        } else {
-            butt.classList.remove("active");
-        }
-    });
-});
-const butto = document.querySelectorAll(".scrollButto"); // Select multiple buttons
-const targetSec = document.getElementById("target-sectio");
-
-// Click to scroll for each button
-butto.forEach(butt => {
-    butt.addEventListener("click", function() {
-        targetSec.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Activate buttons when scrolled
-window.addEventListener("scroll", function() {
-    const targetRect = targetSec.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    butto.forEach(butt => {
-        if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
-            butt.classList.add("active");
-        } else {
-            butt.classList.remove("active");
-        }
-    });
-});
-const buttons = document.querySelectorAll(".scrollButt"); // Select multiple buttons
-const targetSecti = document.getElementById("target-secti");
-
-// Click to scroll for each button
-buttons.forEach(butt => {
-    butt.addEventListener("click", function() {
-        targetSecti.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Activate buttons when scrolled
-window.addEventListener("scroll", function() {
-    const targetRect = targetSecti.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    buttons.forEach(butt => {
-        if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
-            butt.classList.add("active");
-        } else {
-            butt.classList.remove("active");
-        }
-    });
-});
-
-const bu = document.querySelectorAll(".scrollBut"); // Select multiple buttons
-const target = document.getElementById("target-sect");
-
-// Click to scroll for each button
-bu.forEach(butt => {
-    butt.addEventListener("click", function() {
-        target.scrollIntoView({ behavior: "smooth" });
-    });
-});
-
-// Activate buttons when scrolled
-window.addEventListener("scroll", function() {
-    const targetRect = target.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    bu.forEach(butt => {
-        if (window.scrollY > 100 && targetRect.top < windowHeight && targetRect.bottom > 0) {
-            butt.classList.add("active");
-        } else {
-            butt.classList.remove("active");
-        }
-    });
-});
-
-
