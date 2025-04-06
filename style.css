@@ -140,7 +140,7 @@ li>a {
 
     .boox {
         width: 170px !important;
-        left: 170% !important;
+        left: 190% !important;
     }
 
     body:has(.devv:hover) .boox {
