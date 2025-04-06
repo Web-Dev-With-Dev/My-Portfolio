@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     await connectDB();
     const user = new Users({ first, email, subject, text });
     await user.save();
-    return res.status(200).send("Form submission successful");
+    return res.status(200).send("Yayy! Form submitted successfully! I'll contact you very soon!");
   } catch (err) {
     console.error(err);
     return res.status(500).send("Error saving to database");
