@@ -65,7 +65,7 @@ li>a {
 
 .head {
     display: flex;
-    position: fixed;
+    position: fixed !important;
     right: 0;
     width: 50vw;
     justify-content: space-between;
