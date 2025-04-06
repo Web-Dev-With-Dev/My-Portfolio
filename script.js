@@ -1,14 +1,16 @@
   document.getElementById('email-form').addEventListener('submit', function (e) {
-    const emailInput = document.getElementById('email-address');
-    const email = emailInput.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailInput = document.getElementById('email-address');
+      const email = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(email)) {
-      e.preventDefault(); // stop form from submitting
-      alert('Please enter a valid email address.');
-      emailInput.focus();
-    }
-  });
+      if (!emailRegex.test(email)) {
+        e.preventDefault(); // Stop form from submitting
+        alert('❌ Please enter a valid email address.');
+        emailInput.focus();
+      } else {
+        alert('✅ Email is valid! Submitting...');
+      }
+    });
   
 function toggleImage() {
     let img = document.getElementsByClassName("menu")[0]; // Select the first element
