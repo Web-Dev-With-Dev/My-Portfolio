@@ -1,6 +1,6 @@
 // /api/post.js
 import mongoose from 'mongoose';
-
+const path = require("path");
 const uri = "mongodb+srv://gondaliyadev007:WmPYQn0XnGP777ts@mymongodb.ahy8zji.mongodb.net/?retryWrites=true&w=majority&appName=mymongodb";
 
 const userSchema = new mongoose.Schema({
